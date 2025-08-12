@@ -586,14 +586,26 @@ export interface ApiDestinationDestination extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    destination: Schema.Attribute.Text;
+    exculsions: Schema.Attribute.Blocks;
+    highligts: Schema.Attribute.Blocks;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    inculsion: Schema.Attribute.Blocks;
+    itneary: Schema.Attribute.Blocks;
+    know_before_you_go: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::destination.destination'
     > &
       Schema.Attribute.Private;
+    more_info: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
+    total_days: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

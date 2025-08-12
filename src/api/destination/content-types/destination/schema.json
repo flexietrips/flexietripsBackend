@@ -12,7 +12,41 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
+      "type": "text"
+    },
+    "total_days": {
       "type": "string"
+    },
+    "destination": {
+      "type": "text"
+    },
+    "itneary": {
+      "type": "blocks"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "highligts": {
+      "type": "blocks"
+    },
+    "inculsion": {
+      "type": "blocks"
+    },
+    "exculsions": {
+      "type": "blocks"
+    },
+    "know_before_you_go": {
+      "type": "blocks"
+    },
+    "more_info": {
+      "type": "blocks"
     }
   }
 }
