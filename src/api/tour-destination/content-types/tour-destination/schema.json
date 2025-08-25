@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tour_destinations",
+  "info": {
+    "singularName": "tour-destination",
+    "pluralName": "tour-destinations",
+    "displayName": "TourDestination"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "destitnation_name": {
+      "type": "text"
+    },
+    "title": {
+      "type": "text"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "destinationImage": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "destitnation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::destination.destination",
+      "inversedBy": "tour_destination"
+    }
+  }
+}
