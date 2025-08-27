@@ -583,11 +583,18 @@ export interface ApiDestinationDestination extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    airport: Schema.Attribute.Boolean;
+    car_rental: Schema.Attribute.Boolean;
+    city_passes: Schema.Attribute.Boolean;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     destination: Schema.Attribute.Text;
+    discounted_price: Schema.Attribute.String;
     exculsions: Schema.Attribute.Blocks;
+    flights: Schema.Attribute.Boolean;
+    free_cancellation: Schema.Attribute.Boolean;
+    free_wifi: Schema.Attribute.Boolean;
     highligts: Schema.Attribute.Blocks;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
@@ -602,14 +609,20 @@ export interface ApiDestinationDestination extends Struct.CollectionTypeSchema {
       'api::destination.destination'
     > &
       Schema.Attribute.Private;
+    loyality_perks: Schema.Attribute.Boolean;
     more_info: Schema.Attribute.Blocks;
+    ota: Schema.Attribute.Boolean;
+    pay_later: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
+    room_upgrades: Schema.Attribute.Boolean;
+    service_guarntness: Schema.Attribute.Boolean;
     title: Schema.Attribute.Text;
     total_days: Schema.Attribute.String;
     tour_destination: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::tour-destination.tour-destination'
     >;
+    travel_insurance: Schema.Attribute.Boolean;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -652,7 +665,7 @@ export interface ApiTourDestinationTourDestination
   extends Struct.CollectionTypeSchema {
   collectionName: 'tour_destinations';
   info: {
-    displayName: 'TourDestination';
+    displayName: 'tourDestination';
     pluralName: 'tour-destinations';
     singularName: 'tour-destination';
   };
@@ -663,15 +676,11 @@ export interface ApiTourDestinationTourDestination
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    destinationImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    destitnation: Schema.Attribute.Relation<
-      'oneToOne',
+    destination_name: Schema.Attribute.String;
+    destinations: Schema.Attribute.Relation<
+      'oneToMany',
       'api::destination.destination'
     >;
-    destitnation_name: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -679,9 +688,7 @@ export interface ApiTourDestinationTourDestination
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    subTitle: Schema.Attribute.Text;
-    tags: Schema.Attribute.JSON;
-    title: Schema.Attribute.Text;
+    slug: Schema.Attribute.UID<'destination_name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -50,9 +50,48 @@
     },
     "tour_destination": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::tour-destination.tour-destination",
-      "mappedBy": "destitnation"
+      "inversedBy": "destinations"
+    },
+    "travel_insurance": {
+      "type": "boolean"
+    },
+    "flights": {
+      "type": "boolean"
+    },
+    "airport": {
+      "type": "boolean"
+    },
+    "car_rental": {
+      "type": "boolean"
+    },
+    "free_cancellation": {
+      "type": "boolean"
+    },
+    "pay_later": {
+      "type": "boolean"
+    },
+    "loyality_perks": {
+      "type": "boolean"
+    },
+    "service_guarntness": {
+      "type": "boolean"
+    },
+    "city_passes": {
+      "type": "boolean"
+    },
+    "free_wifi": {
+      "type": "boolean"
+    },
+    "room_upgrades": {
+      "type": "boolean"
+    },
+    "ota": {
+      "type": "boolean"
+    },
+    "discounted_price": {
+      "type": "string"
     }
   }
 }
