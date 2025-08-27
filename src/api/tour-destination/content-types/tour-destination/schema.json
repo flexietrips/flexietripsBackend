@@ -11,21 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "destination_name": {
+    "name": {
       "type": "string"
     },
     "slug": {
-      "type": "uid",
-      "targetField": "destination_name"
-    },
-    "destinations": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::destination.destination",
-      "mappedBy": "tour_destination"
+      "type": "uid"
     },
     "price": {
       "type": "decimal"
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::destination.destination",
+      "inversedBy": "tour_destinations"
     }
   }
 }

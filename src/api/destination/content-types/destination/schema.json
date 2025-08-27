@@ -48,12 +48,6 @@
     "more_info": {
       "type": "blocks"
     },
-    "tour_destination": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::tour-destination.tour-destination",
-      "inversedBy": "destinations"
-    },
     "travel_insurance": {
       "type": "boolean"
     },
@@ -92,6 +86,12 @@
     },
     "discounted_price": {
       "type": "string"
+    },
+    "tour_destinations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tour-destination.tour-destination",
+      "mappedBy": "destination"
     }
   }
 }

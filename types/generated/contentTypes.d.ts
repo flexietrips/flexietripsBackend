@@ -618,8 +618,8 @@ export interface ApiDestinationDestination extends Struct.CollectionTypeSchema {
     service_guarntness: Schema.Attribute.Boolean;
     title: Schema.Attribute.Text;
     total_days: Schema.Attribute.String;
-    tour_destination: Schema.Attribute.Relation<
-      'manyToOne',
+    tour_destinations: Schema.Attribute.Relation<
+      'oneToMany',
       'api::tour-destination.tour-destination'
     >;
     travel_insurance: Schema.Attribute.Boolean;
@@ -676,9 +676,8 @@ export interface ApiTourDestinationTourDestination
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    destination_name: Schema.Attribute.String;
-    destinations: Schema.Attribute.Relation<
-      'oneToMany',
+    destination: Schema.Attribute.Relation<
+      'manyToOne',
       'api::destination.destination'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -687,9 +686,10 @@ export interface ApiTourDestinationTourDestination
       'api::tour-destination.tour-destination'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'destination_name'>;
+    slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
