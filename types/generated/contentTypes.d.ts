@@ -687,6 +687,7 @@ export interface ApiTourDestinationTourDestination
       'api::tour-destination.tour-destination'
     > &
       Schema.Attribute.Private;
+    price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'destination_name'>;
     updatedAt: Schema.Attribute.DateTime;

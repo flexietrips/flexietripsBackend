@@ -23,6 +23,9 @@
       "relation": "oneToMany",
       "target": "api::destination.destination",
       "mappedBy": "tour_destination"
+    },
+    "price": {
+      "type": "decimal"
     }
   }
 }
