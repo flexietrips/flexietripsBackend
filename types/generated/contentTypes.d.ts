@@ -583,6 +583,7 @@ export interface ApiDestinationDestination extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    actual_price: Schema.Attribute.String;
     airport: Schema.Attribute.Boolean;
     car_rental: Schema.Attribute.Boolean;
     city_passes: Schema.Attribute.Boolean;

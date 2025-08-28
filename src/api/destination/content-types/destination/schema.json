@@ -84,6 +84,9 @@
     "ota": {
       "type": "boolean"
     },
+    "actual_price": {
+      "type": "string"
+    },
     "discounted_price": {
       "type": "string"
     },
