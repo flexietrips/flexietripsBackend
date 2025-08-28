@@ -15,7 +15,8 @@
       "type": "string"
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "name"
     },
     "price": {
       "type": "decimal"
@@ -25,6 +26,16 @@
       "relation": "manyToOne",
       "target": "api::destination.destination",
       "inversedBy": "tour_destinations"
+    },
+    "tour_image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
